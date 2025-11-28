@@ -4,28 +4,56 @@
   <meta charset="utf-8" />
   <title>MercaGo · Red social de abarrotes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="MercaGo es una red social y plataforma de gestión para tiendas de abarrotes: usuarios, productos, tiendas y publicaciones, integrada con una base de datos NoSQL en MongoDB."
+  />
   <link rel="stylesheet" href="./assets/styles.css" />
 </head>
 <body>
+  <!-- Barra superior -->
   <header class="topbar">
-    <div class="topbar__logo">MercaGo</div>
-    <nav class="topbar__nav">
-      <button data-view="home" class="nav-btn nav-btn--active">Inicio</button>
-      <button data-view="feed" class="nav-btn">Red social</button>
-      <button data-view="stores" class="nav-btn">Tiendas</button>
-      <button data-view="products" class="nav-btn">Productos</button>
+    <div class="topbar__logo">
+      MercaGo
+    </div>
+
+    <nav class="topbar__nav" aria-label="Navegación principal">
+      <button type="button" data-view="home" class="nav-btn nav-btn--active">
+        Inicio
+      </button>
+      <button type="button" data-view="feed" class="nav-btn">
+        Red social
+      </button>
+      <button type="button" data-view="stores" class="nav-btn">
+        Tiendas
+      </button>
+      <button type="button" data-view="products" class="nav-btn">
+        Productos
+      </button>
     </nav>
   </header>
 
-  <main id="app-root" class="app-root">
-    <!-- Aquí se insertan las vistas desde main.js -->
+  <!-- Contenedor principal donde se montan las vistas con JS -->
+  <main id="app-root" class="app-root" aria-live="polite">
+    <!-- El contenido se inserta dinámicamente desde src/main.js -->
+    <noscript>
+      <section class="card">
+        <h1 class="card__title">Activa JavaScript para usar MercaGo</h1>
+        <p class="card__subtitle">
+          Esta aplicación necesita JavaScript para cargar las vistas de la red social, tiendas y productos.
+        </p>
+      </section>
+    </noscript>
   </main>
 
+  <!-- Pie de página -->
   <footer class="footer">
-    <small>© 2025 MercaGo · Proyecto académico UPC</small>
+    <small>
+      © 2025 MercaGo · Proyecto académico · Integración frontend (JavaScript) + backend (Node/Express/MongoDB)
+    </small>
   </footer>
 
-  <!-- JS como módulo -->
+  <!-- Punto de entrada de la app -->
   <script type="module" src="./src/main.js"></script>
 </body>
 </html>

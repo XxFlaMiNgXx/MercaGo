@@ -1,5 +1,5 @@
 // Ajusta el puerto según tu backend / Docker
-export const API_BASE_URL = "http://localhost:3000";
+export const API_BASE_URL = "http://localhost:3001";
 
 export const apiPosts = {
   async list() {
@@ -15,6 +15,42 @@ export const apiPosts = {
       body: JSON.stringify(post)
     });
     if (!response.ok) throw new Error("Error al crear post");
+    return response.json();
+  }
+};
+
+export const apiStores = {
+  async list() {
+    const response = await fetch(`${API_BASE_URL}/stores`);
+    if (!response.ok) throw new Error("Error al obtener tiendas");
+    return response.json();
+  },
+  
+  async create(store) {
+    const response = await fetch(`${API_BASE_URL}/stores`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(store)
+    });
+    if (!response.ok) throw new Error("Error al crear tienda");
+    return response.json();
+  }
+};
+
+export const apiProducts = {
+  async list() {
+    const response = await fetch(`${API_BASE_URL}/products`);
+    if (!response.ok) throw new Error("Error al obtener productos");
+    return response.json();
+  },
+  
+  async create(product) {
+    const response = await fetch(`${API_BASE_URL}/products`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(product)
+    });
+    if (!response.ok) throw new Error("Error al crear producto");
     return response.json();
   }
 };

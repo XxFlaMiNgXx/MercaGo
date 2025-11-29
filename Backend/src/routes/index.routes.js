@@ -67,6 +67,12 @@ router.post("/stores", async (req, res) => {
   res.send(respuesta);
 });
 
+// Ruta compatible con frontend
+router.get("/stores", async (req, res) => {
+  const respuesta = await ModelStore.find({});
+  res.send(respuesta);
+});
+
 router.get("/stores/ls", async (req, res) => {
   const respuesta = await ModelStore.find({});
   res.send(respuesta);
@@ -101,6 +107,12 @@ router.delete("/stores/:id", async (req, res) => {
 router.post("/products", async (req, res) => {
   const body = req.body;
   const respuesta = await ModelProduct.create(body);
+  res.send(respuesta);
+});
+
+// Ruta compatible con frontend
+router.get("/products", async (req, res) => {
+  const respuesta = await ModelProduct.find({});
   res.send(respuesta);
 });
 
@@ -171,6 +183,12 @@ router.delete("/promotions/:id", async (req, res) => {
 router.post("/posts", async (req, res) => {
   const body = req.body;
   const respuesta = await ModelPost.create(body);
+  res.send(respuesta);
+});
+
+// Ruta compatible con frontend
+router.get("/posts", async (req, res) => {
+  const respuesta = await ModelPost.find({});
   res.send(respuesta);
 });
 

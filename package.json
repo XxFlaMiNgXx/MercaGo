@@ -2,8 +2,13 @@
   "name": "mercago",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Backend/src/index.js",
+  "type": "commonjs",
   "scripts": {
+    "start": "node Backend/src/index.js",
+    "dev": "nodemon Backend/src/index.js",
+    "frontend": "cd Frontend && python -m http.server 5500",
+    "backend": "nodemon Backend/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,13 +18,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/XxFlaMiNgXx/MercaGo/issues"
   },
   "homepage": "https://github.com/XxFlaMiNgXx/MercaGo#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "mongoose": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
